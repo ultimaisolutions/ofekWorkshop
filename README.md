@@ -1,4 +1,4 @@
 # Hey there!
-You can find my html website in this repository
-I'm working on this website over time, mostly using it as a canvas for my actual personal website.
-Treat this is a blueprint before I code the final result with css and js as well
+This is my workshop for all things frontend - html, css, javascript, typescript, react, etc. <br>
+There are a lot of code snippets here you can simply copy and paste and take inspiration from. <br>
+Good luck!
