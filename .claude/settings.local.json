@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.linkedin.com)",
+      "Read(//c/Users/ofek7/OneDrive/Pictures/Screenshots/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

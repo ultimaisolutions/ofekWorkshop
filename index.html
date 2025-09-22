@@ -1,61 +1,692 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title> Ofek Loya - Projects </title>
-    </head>
-    <body>
-        <h1> Ofek Loya</h1>
-        <img src="https://ultimaisolutions.github.io/ultimailogo/Logo-01.jpg" width = "900" height = "300">
-        <p> Hey! My name is Ofek Loya, I'm a 24 year old israeli,<br>currently a finance
-        and business management student at Ben Gurion University in Be'er Sheva, Israel.<br>This is going to be my personal project display website where I display all of my projects.<br></p>
-        <p> Here is a list of my skills:</p>
-        <ul>
-            <li>Leadership and team management skills</li>
-            <li>Python Coding</li>
-            <li>Javascript Coding</li>
-            <li>Docker and Kubernetes</li>
-            <li>Software Development</li>
-        </ul>
-        <table>
-            <tr>
-                <th>Year</th>
-                <th>Role</th>
-                <th>Applied Skills</th>
-            </tr>
-            <tr>
-                <th>2019 - 2020</th>
-                <th>Logistics Soldier</th>
-                <th>Work under stressful situations<br>logistical management</th>
-            </tr>
-            <tr>
-                <th>2020 - 2021</th>
-                <th>Logistics Officer<br>Regiment 6930</th>
-                <th>Work under stressful situations<br>logistical management<br>Manage Soldiers<br>Manage 3 NCOs</th>
-            </tr>
-        </table>
-        <br>
-        <h2>Contact me!</h2>
-        <form action="/submit-feedback" method="POST">
-            <fieldset>
-                <legend>Contact me if you're interested in my services</legend>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <!-- Name Field -->
-                <label for="name">Name</label><br>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-                
-                <!-- Email Field -->
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-    
-                <!-- Comments Field -->
-                <label for="comments">Comments:</label><br>
-                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Share your thoughts!"></textarea><br><br>
-    
-                <!-- Submit Button -->
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
-        <footer> Visit my Social media! <a href="https://www.instagram.com/ultimaisolutions/">Instagram</a></footer>
-    </body>
+    <!-- Primary Meta Tags -->
+    <title>Ofek Loya - AI Developer & Company Founder | Ultim AI Solutions</title>
+    <meta name="title" content="Ofek Loya - AI Developer & Company Founder">
+    <meta name="description" content="Founder of Ultim AI Solutions specializing in personalized AI-powered software development. Military leader with expertise in logistics and team management.">
+    <meta name="keywords" content="AI Developer, Full Stack Developer, Company Founder, Ultim AI Solutions, Military Leader, Software Development">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ofek Loya - AI Developer & Company Founder">
+    <meta property="og:description" content="Building the Future with Artificial Intelligence">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ofek Loya - AI Developer & Company Founder">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">Ofek Loya</a>
+            </div>
+            <div class="nav-menu desktop-nav">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-background">
+                <canvas id="particle-canvas"></canvas>
+            </div>
+            <div class="hero-content">
+                <img src="https://ultimaisolutions.github.io/ultimailogo/Logo-01.jpg" alt="Ofek Loya Profile Photo" class="hero-avatar">
+                <h1 class="hero-name">Ofek Loya</h1>
+                <div class="hero-title">
+                    <span class="typed-text"></span>
+                </div>
+                <p class="hero-tagline">Building the Future with Artificial Intelligence</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">AI company founder and military leader with a passion for building innovative solutions</p>
+                </div>
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="https://ultimaisolutions.github.io/ultimailogo/Logo-01.jpg" alt="Ofek Loya Professional Photo" class="responsive-image">
+                        <div class="about-decoration"></div>
+                    </div>
+                    <div class="about-content">
+                        <p class="about-intro">
+                            AI company founder and military leader with a passion for building
+                            innovative solutions that transform businesses through artificial intelligence.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-number">4+</span>
+                                <span class="highlight-label">Months Building AI Solutions</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-number">3+</span>
+                                <span class="highlight-label">Years Military Leadership</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-number">59</span>
+                                <span class="highlight-label">Officers Trained</span>
+                            </div>
+                        </div>
+                        <p class="about-description">
+                            As the founder of Ultim AI Solutions, I specialize in developing
+                            personalized AI-powered software for businesses. My military background
+                            in logistics and team leadership brings unique discipline and strategic
+                            thinking to every project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My journey from military leadership to AI innovation</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun 2025 - Present</div>
+                            <h3 class="timeline-title">Founder</h3>
+                            <h4 class="timeline-company">Ultim AI Solutions</h4>
+                            <p class="timeline-description">
+                                Founded Ultim AI Solutions, an AI focused software development company that develops personalized AI-powered softwares for businesses and companies.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Start-up Leadership</span>
+                                <span class="skill-tag">AI Development</span>
+                                <span class="skill-tag">Business Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2023 - May 2024</div>
+                            <h3 class="timeline-title">Supply Officer</h3>
+                            <h4 class="timeline-company">Israel Defense Forces</h4>
+                            <p class="timeline-description">
+                                In charge of the supply department of Etzion Regional Brigade, managing fuel supply, transportation, and water distribution.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Distribution Management</span>
+                                <span class="skill-tag">Supply Operations</span>
+                                <span class="skill-tag">Team Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Apr 2022 - May 2023</div>
+                            <h3 class="timeline-title">Team Leader</h3>
+                            <h4 class="timeline-company">Israel Defense Forces - Officer's Academy</h4>
+                            <p class="timeline-description">
+                                Training and qualifying cadets in the IDF's Officer's Academy to become officers, totaling 59 trained and qualified cadets.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Training & Development</span>
+                                <span class="skill-tag">Military Operations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jul 2021 - Apr 2022</div>
+                            <h3 class="timeline-title">Transportation Officer</h3>
+                            <h4 class="timeline-company">Israel Defense Forces</h4>
+                            <p class="timeline-description">
+                                In charge of transportation trucks fleet numbering 26 refrigerated trucks for food transportation and distribution to military bases.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Supply Operations</span>
+                                <span class="skill-tag">Transportation Management</span>
+                                <span class="skill-tag">Team Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Oct 2020 - Jul 2021</div>
+                            <h3 class="timeline-title">Logistics Officer</h3>
+                            <h4 class="timeline-company">Israel Defense Forces</h4>
+                            <p class="timeline-description">
+                                Regiment Logistics department manager, in charge of storage and distribution of military equipment and fuel supply.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Logistics Management</span>
+                                <span class="skill-tag">Supply Operations</span>
+                                <span class="skill-tag">Team Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills</h2>
+                    <p class="section-subtitle">Technical expertise and leadership capabilities</p>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">Technical Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">AI Development</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="85">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Full Stack Development</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="80">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="75">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="70">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Leadership Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Team Leadership</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="95">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Military Operations</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="90">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Training & Development</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="85">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Start-up Leadership</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="80">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Operational Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Supply Operations</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="95">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Logistics Management</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="90">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Distribution Management</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="90">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Project Management</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-progress" data-progress="80">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-subtitle">Innovative AI solutions and full-stack applications</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">AI</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Customer Support Chatbot</h3>
+                            <p class="project-category">AI Development</p>
+                            <p class="project-description">
+                                Multimodal customer support agent with social media integration for WhatsApp, Instagram, and Facebook.
+                            </p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Automates customer support processes</li>
+                                    <li>Learns and remembers customers</li>
+                                    <li>CRM system integration</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">AI/ML</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">Vector Database</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">SaaS</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Majordomo AI SaaS</h3>
+                            <p class="project-category">Full Stack + AI</p>
+                            <p class="project-description">
+                                AI-powered vacation rental automation platform that handles everything from payments to customer communication.
+                            </p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Complete rental automation</li>
+                                    <li>RAG implementation with Pinecone</li>
+                                    <li>n8n automation workflows</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">AI/ML</span>
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">Pinecone</span>
+                                <span class="tech-tag">n8n</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">API</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">WhatsApp Integration</h3>
+                            <p class="project-category">Full Stack Development</p>
+                            <p class="project-description">
+                                Complete WhatsApp interface for client SaaS platform with AI stress detection and analytics dashboard.
+                            </p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>10-day development sprint</li>
+                                    <li>Multiple account integration</li>
+                                    <li>AI stress detection</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">WhatsApp API</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Testimonials</h2>
+                    <p class="section-subtitle">What clients say about working with Ultim AI Solutions</p>
+                </div>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card active">
+                            <div class="testimonial-content">
+                                <p>"Ultim AI delivered exactly what we needed, fast. Clear communication, practical advice, and measurable results. The dashboard looks polished, runs smoothly, and impressed our team immediately."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Business Client</h4>
+                                    <p>Tech Startup</p>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Professional from start to finish. They automated our WhatsApp workflows, reduced manual tasks, and documented everything clearly. Support has been responsive, patient, and genuinely helpful."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Operations Manager</h4>
+                                    <p>SaaS Company</p>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The AI integration saved hours each week. Smart recommendations, clean UI, and easy onboarding. We appreciated realistic timelines, transparent pricing, and proactive status updates."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Product Manager</h4>
+                                    <p>E-commerce Platform</p>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" aria-label="Previous testimonial">‹</button>
+                        <div class="carousel-dots">
+                            <button class="dot active" aria-label="Testimonial 1"></button>
+                            <button class="dot" aria-label="Testimonial 2"></button>
+                            <button class="dot" aria-label="Testimonial 3"></button>
+                        </div>
+                        <button class="carousel-btn next-btn" aria-label="Next testimonial">›</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-intro">
+                    <h2 class="section-title">Let's Build Something Amazing Together</h2>
+                    <p class="section-subtitle">Ready to transform your business with AI? Get in touch to discuss your project.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="multi-step-form">
+                            <!-- Step 1: Service Selection -->
+                            <div class="form-step active" data-step="1">
+                                <h3>What service are you interested in?</h3>
+                                <div class="service-options">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="ai-development">
+                                        <div class="option-card">
+                                            <h4>AI Development</h4>
+                                            <p>Custom AI solutions and integrations</p>
+                                        </div>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="full-stack">
+                                        <div class="option-card">
+                                            <h4>Full Stack Development</h4>
+                                            <p>Complete web and mobile applications</p>
+                                        </div>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="consulting">
+                                        <div class="option-card">
+                                            <h4>Consulting</h4>
+                                            <p>Strategy and technical guidance</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Project Details -->
+                            <div class="form-step" data-step="2">
+                                <h3>Tell me about your project</h3>
+                                <div class="form-group">
+                                    <label for="project-timeline">Project Timeline</label>
+                                    <select id="project-timeline" name="timeline" required>
+                                        <option value="">Select timeline</option>
+                                        <option value="asap">ASAP (Rush project)</option>
+                                        <option value="1-month">Within 1 month</option>
+                                        <option value="2-3-months">2-3 months</option>
+                                        <option value="flexible">Flexible timeline</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-budget">Budget Range</label>
+                                    <select id="project-budget" name="budget" required>
+                                        <option value="">Select budget range</option>
+                                        <option value="under-5k">Under $5,000</option>
+                                        <option value="5k-15k">$5,000 - $15,000</option>
+                                        <option value="15k-30k">$15,000 - $30,000</option>
+                                        <option value="over-30k">Over $30,000</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-description">Project Description</label>
+                                    <textarea id="project-description" name="description" rows="4"
+                                              placeholder="Describe your project goals and requirements..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Contact Information -->
+                            <div class="form-step" data-step="3">
+                                <h3>Contact Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-name">Name *</label>
+                                        <input type="text" id="contact-name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-company">Company</label>
+                                        <input type="text" id="contact-company" name="company">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email *</label>
+                                        <input type="email" id="contact-email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-phone">Phone</label>
+                                        <input type="tel" id="contact-phone" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferred-contact">Preferred Contact Method</label>
+                                    <select id="preferred-contact" name="contact-method">
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="whatsapp">WhatsApp</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Form Navigation -->
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step" style="display: none;">Previous</button>
+                                <button type="button" class="btn btn-primary next-step">Next</button>
+                                <button type="submit" class="btn btn-primary submit-form" style="display: none;">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>ofekloya@ultimaisolutions.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (345) 676-4598</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">🌍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Karmiel, North District, Israel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Ofek Loya</h3>
+                    <p>Building the Future with Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <a href="https://www.instagram.com/ultimaisolutions/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="mailto:ofekloya@ultimaisolutions.com">Email</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ofek Loya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
 </html>
     
