@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialCarousel();
     initContactForm();
     initMobileMenu();
+    updateBusinessMonths();
 });
 
 // Navigation functionality
@@ -581,6 +582,28 @@ function initMobileMenu() {
             document.body.style.overflow = '';
         }
     });
+}
+
+// Business duration calculator
+function updateBusinessMonths() {
+    var monthsElement = document.getElementById('months_working');
+    if (!monthsElement) return;
+
+    // Business start date: June 1, 2025
+    var startDate = new Date(2025, 5, 1); // Month is 0-indexed, so 5 = June
+    var currentDate = new Date();
+
+    // Calculate the difference in months
+    var yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+    var monthDiff = currentDate.getMonth() - startDate.getMonth();
+    var totalMonths = yearDiff * 12 + monthDiff;
+
+    // Handle edge case where current day is before start day in the month
+    var dayAdjustment = currentDate.getDate() < startDate.getDate() ? -1 : 0;
+    var finalMonths = Math.max(0, totalMonths + dayAdjustment);
+
+    // Update the element content
+    monthsElement.textContent = finalMonths + '+';
 }
 
 // Utility functions
