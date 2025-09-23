@@ -231,6 +231,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .menu-toggle.active {
   z-index: var(--z-tooltip);
   position: relative;
+  background: var(--white);
 }
 
 .menu-toggle.active span {
@@ -268,6 +269,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu.active {
   display: flex;
+  width: 100%;
+  position: fixed;
 }
 
 .mobile-menu a {
@@ -1232,6 +1235,22 @@ section:nth-child(even) {
 
   .footer-links {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Fix for very small screens (320px-480px) - Critical mobile navigation fix */
+@media (max-width: 480px) {
+  .menu-toggle {
+    display: flex !important;
+    z-index: 1040;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .nav-container {
+    padding: 0 var(--space-sm);
   }
 }
 
