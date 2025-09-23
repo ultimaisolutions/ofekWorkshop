@@ -565,6 +565,17 @@ function initMobileMenu() {
         }
     });
 
+    // Mobile menu close button functionality
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            // Reuse existing close logic
+            menuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
     // Close menu when clicking outside
     mobileMenu.addEventListener('click', function(e) {
         if (e.target === mobileMenu) {
