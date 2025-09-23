@@ -39,9 +39,12 @@ function initNavigation() {
             // Close mobile menu if open
             const mobileMenu = document.querySelector('.mobile-menu');
             const menuToggle = document.querySelector('.menu-toggle');
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
                 menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                setTimeout(() => {
+                    document.body.classList.remove('menu-open');
+                }, 150);
             }
         });
     });
@@ -553,44 +556,65 @@ function initMobileMenu() {
 
     if (!menuToggle || !mobileMenu) return;
 
-    menuToggle.addEventListener('click', function() {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
+    function openMobileMenu() {
+        // Add classes with slight delay to ensure smooth animation
+        menuToggle.classList.add('active');
+        document.body.classList.add('menu-open');
 
-        // Prevent body scroll when menu is open
+        // Use requestAnimationFrame to ensure DOM has updated
+        requestAnimationFrame(() => {
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    function closeMobileMenu() {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+
+        // Wait for transition to complete before removing body class
+        setTimeout(() => {
+            document.body.classList.remove('menu-open');
+        }, 150); // Match --transition-fast duration
+    }
+
+    menuToggle.addEventListener('click', function() {
         if (mobileMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
+            closeMobileMenu();
         } else {
-            document.body.style.overflow = '';
+            openMobileMenu();
         }
     });
 
     // Mobile menu close button functionality
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
     if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', function() {
-            // Reuse existing close logic
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
 
     // Close menu when clicking outside
     mobileMenu.addEventListener('click', function(e) {
         if (e.target === mobileMenu) {
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
         }
     });
 
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
+        }
+    });
+
+    // Handle orientation change
+    window.addEventListener('orientationchange', function() {
+        if (mobileMenu.classList.contains('active')) {
+            // Small delay to let orientation change complete
+            setTimeout(() => {
+                // Force reflow to ensure proper sizing
+                mobileMenu.style.display = 'none';
+                mobileMenu.offsetHeight; // Trigger reflow
+                mobileMenu.style.display = 'flex';
+            }, 100);
         }
     });
 }
